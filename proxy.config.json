@@ -1,0 +1,20 @@
+{
+    "/api/*":{
+        "target":"http://127.0.0.1:3000",
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite":{
+            "/api": "/api"
+        },
+        "secure": false
+    },
+    "/apiLocal/*":{
+        "target":"http://127.0.0.1:3000",
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite":{
+            "/apiLocal": "/apiLocal"
+        },
+        "secure": false
+    }
+}
