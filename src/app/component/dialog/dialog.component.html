@@ -1,0 +1,43 @@
+<div class="el-dialog__wrapper"
+    style="z-index: 2000; opacity: 1; transform: translate3d(0px, 0px, 0px); visibility: inherit;
+    background-color:#0000007a;">
+    <div class="el-dialog animate__animated animate__slideInDown"
+    [style]="{'width': dialogInfo.width+'px', 'top':'15%'}">
+        <div class="el-dialog__header">
+            <span [ngClass]=
+                "{'el-alert--warning':dialogInfo.titleType=='warning',
+                'el-alert--success':dialogInfo.titleType=='success',
+                'el-alert--info':dialogInfo.titleType=='info',
+                'el-alert--error':dialogInfo.titleType=='error'
+                }">
+                <i *ngIf="dialogInfo.titleType=='warning'" class="el-alert__icon el-icon-warning"></i>
+                <i *ngIf="dialogInfo.titleType=='success'" class="el-alert__icon el-icon-success"></i>
+                <i *ngIf="dialogInfo.titleType=='error'" class="el-alert__icon el-icon-error"></i>
+                <i *ngIf="dialogInfo.titleType=='info'" class="el-alert__icon el-icon-info"></i>
+            </span>
+            <span *ngIf="dialogInfo.title" class="el-dialog__title">{{dialogInfo.title}}</span>
+            <button aria-label="Close" class="el-dialog__headerbtn" type="button"
+            (click)="dialogInfo.closeEvent()">
+            <i class="el-dialog__close el-icon el-icon-close"></i>
+            </button>
+        </div>
+        <div class="el-dialog__body">
+            <span [ngClass]=
+            "{'el-alert--warning':dialogInfo.type=='warning',
+            'el-alert--success':dialogInfo.type=='success',
+            'el-alert--info':dialogInfo.type=='info',
+            'el-alert--error':dialogInfo.type=='error'
+            }">
+                <i *ngIf="dialogInfo.type=='warning'" class="el-alert__icon el-icon-warning"></i>
+                <i *ngIf="dialogInfo.type=='success'" class="el-alert__icon el-icon-success"></i>
+                <i *ngIf="dialogInfo.type=='error'" class="el-alert__icon el-icon-error"></i>
+                <i *ngIf="dialogInfo.type=='info'" class="el-alert__icon el-icon-info"></i>
+                {{dialogInfo.content}}
+            </span>
+        </div>
+        <div class="el-dialog__footer" *ngIf="dialogInfo.hasBtn">
+            <el-button (click) = "dialogInfo.cancelEvent()">取消</el-button>
+            <el-button type="primary" (click) = "dialogInfo.okEvent()">确定</el-button>
+        </div>
+    </div>
+  </div>

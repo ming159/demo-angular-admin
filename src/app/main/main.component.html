@@ -1,0 +1,35 @@
+<div class="main_box">
+    <!-- <app-header #myheader></app-header> -->
+
+   <div class="seach_box">
+        <div class="el-input el-input-group form_item">
+            <div class="el-input-group__prepend form_item_label">
+                名称:
+            </div>
+            <input type="text" #box placeholder="请输入名称关键词搜索" class="el-input__inner"
+            (keyup.enter)="keyword=box.value"
+            (blur)="keyword=box.value">
+        </div>
+        <el-button type="primary"
+        style="width: 120px ;margin: 20px;"
+        (click)="getData()">查询</el-button>
+   </div>
+    <div style="padding: 0 20px;">
+        <app-main-table #mychild></app-main-table>
+    </div>
+
+    <!-- <el-dialog [title]="" [(visible)]="showDel">
+        <ng-template #title>
+            <span class="el-icon-warning"></span>
+            <span>自定义的标题</span>
+        </ng-template>
+        <span>这篇葛底斯堡演讲朗诵的很好。</span>
+        <ng-template #footer>
+            <el-button (click)="showDel = false">取消</el-button>
+            <el-button (click)="delConfirm()">确定</el-button>
+        </ng-template>
+    </el-dialog> -->
+    <app-dialog *ngIf="showDel" #mydialog></app-dialog>
+    <app-dialog-main-edit *ngIf="showEdit" #mydialogEdit></app-dialog-main-edit>
+</div>
+<router-outlet></router-outlet>

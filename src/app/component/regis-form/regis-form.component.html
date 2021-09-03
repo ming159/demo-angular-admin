@@ -1,0 +1,44 @@
+<div class="regis_panle animate__animated animate__lightSpeedInLeft">
+    <div class="el-input el-input-group el-input-group--prepend regis_item">
+        <div class="el-input-group__prepend">
+            <span class="el-icon-share"></span>
+        </div>
+        <input type="text" #box
+        placeholder="请输入用户名称"
+        class="el-input__inner"
+        (keyup.enter)="username=box.value"
+        (blur)="username=box.value">
+    </div>
+    <div class="el-input el-input-group el-input-group--prepend regis_item">
+        <div class="el-input-group__prepend">
+            <span class="el-icon-share"></span>
+        </div>
+        <input type="password" #box3
+        placeholder="请输入账号密码"
+        class="el-input__inner"
+        (keyup.enter)="password=box3.value"
+        (blur)="password=box3.value">
+    </div>
+    <div class="el-input el-input-group el-input-group--prepend regis_item">
+        <div class="el-input-group__prepend">
+            <span class="el-icon-share"></span>
+        </div>
+        <input type="text" #box4
+        placeholder="请输入邮箱地址"
+        class="el-input__inner"
+        (keyup.enter)="email=box4.value"
+        (blur)="email=box4.value">
+    </div>
+    <div class="el-input el-input-group el-input-group--prepend regis_item">
+        <div class="el-input-group__prepend">
+            <span class="el-icon-share"></span>
+        </div>
+        <input type="text" #box5
+        placeholder="请输入手机号码"
+        class="el-input__inner"
+        (keyup.enter)="phone=box5.value"
+        (blur)="phone=box5.value">
+    </div>
+    <button class="regis_btn el-button el-button--primary" (click)="regisExc()">注册</button>
+    <button class="regis_btn el-button el-button--text" (click)="regisCancel()">返回</button>
+</div>

@@ -1,0 +1,11 @@
+.form_item{
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    label {
+        display: inline-block;
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+    }
+}

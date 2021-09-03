@@ -1,0 +1,38 @@
+.main_table{
+    height: 300px;
+    width: 100%;
+}
+el-table{
+    height: 100%;
+    width: 100%;
+}
+table,thead,tr{
+    width: 100%;
+}
+tr{
+    background-color:#66b1ff;
+}
+th{
+    background-color: #66b1ff;
+    border-color: #66b1ff;
+    color: #ffffff;
+    padding: 10px 0;
+}
+td{
+    text-align: center;
+    color: #333333;
+    padding: 10px 0;
+    background-color: #efefef;
+}
+.seach_box{
+    padding: 0 20px;
+    width: calc(100% - 40px);
+}
+.seach_box .form_item{
+    width: 300px;
+}
+.seach_box .form_item_label{
+    background-color: transparent;
+    border: none;
+}
+

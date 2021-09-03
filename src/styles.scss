@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~animate.css';
+@import '~element-angular/theme/index.css';
+@import '../src/assets/css/custom-message.css';
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.main_box .tbody_v,
+.user_box .tbody_v
+{
+    max-height: 550px !important;
+}
+
+.container_v{
+    width: 100%;
+    height: calc(100% - 60px);
+    display: flex;
+    .menu_left{
+        width: 260px;
+        height: 100%;
+        background-color: #034890;
+        color: #fff;
+    }
+    .container_main{
+        width: calc(100% - 260px);
+        height: 100%;
+        overflow: auto;
+    }
+}
+.el-menu{
+    background-color: transparent;
+    .el-submenu .el-menu-item,
+    .el-submenu__title,
+    .el-submenu__title i,
+    .el-menu-item,
+    .el-menu-item i,
+    .el-menu-item-group__title{
+        color: #fff !important;
+    }
+    .is-active,
+    .is-active i{
+        color: #004afe !important;
+    }
+    .el-menu-item:focus,
+    .el-submenu:hover,
+    .el-submenu__title:hover,
+    .el-menu-item:hover{
+        background-color: transparent;
+        color: #004afe !important;
+        i{
+            color: #004afe !important;
+        }
+    }
+}
+
+
+

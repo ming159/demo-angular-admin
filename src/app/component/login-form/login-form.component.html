@@ -1,0 +1,32 @@
+<div class="login_panle animate__animated animate__backInLeft">
+    <el-input placeholder="请输入内容" [model]="username" class="login_item">
+        <ng-template #prepend>
+          <span>
+              <i class="el-icon-delete"></i>
+          </span>
+        </ng-template>
+    </el-input>
+    <div class="el-input login_password el-input-group el-input-group--prepend login_item">
+        <div class="el-input-group__prepend">
+            <span class="el-icon-share"></span>
+        </div>
+        <input type="password" #box
+        placeholder="请输入密码"
+        class="el-input__inner"
+        (keyup.enter)="password=box.value"
+        (blur)="password=box.value">
+    </div>
+    
+    <el-input placeholder="请输入验证码" [model]="password" type="text" class="login_item">
+        <ng-template #prepend>
+          <span>
+              <i class="el-icon-edit"></i>
+          </span>
+        </ng-template>
+    </el-input>
+
+    <el-button class="login_btn" type="primary" (click) = "loginEvent()"
+    style="width: 100%;text-align: center;margin: 20px 0;">登录</el-button>
+    <el-button class="login_btn" type="text"  (click) = "regisEvent()"
+    style="width: 100%;text-align: center;margin: 0;color: #000;">注册</el-button>
+</div>

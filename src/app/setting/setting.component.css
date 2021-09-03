@@ -1,0 +1,17 @@
+.setting_box {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.set_item {
+    width: 50%;
+    margin: 10px 0;
+}
+
+.set_item_label {
+    border: none;
+    background-color: transparent;
+    width: 120px;
+    text-align: right;
+}

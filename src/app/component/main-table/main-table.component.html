@@ -1,0 +1,36 @@
+<div class="table_wrap">
+   <div class="table_v">
+       <div class="thead_v">
+            <div class="tr_v">
+                <div class="th_v" *ngFor="let item of thead"
+                [style.width]="setStyles(checkbox,item.name)">
+                    <div *ngIf="!item.name" class="cell">
+                        <el-checkbox [model]="checkall" (modelChange)="selectAll($event)">
+                        </el-checkbox>
+                    </div>
+                    <div *ngIf="item.name" class="cell">{{item.name}}</div>
+                </div>
+            </div>
+       </div>
+       <div *ngIf="tableData.length>0" class="tbody_v">
+            <div class="tr_v" *ngFor="let row of tableData">
+                <div class="td_v" *ngFor="let col of rows"
+                [style.width]="setStyles(checkbox,col)">
+                    <div *ngIf="!col" class="cell">
+                        <el-checkbox [model]="row.check" (modelChange)="selectCurrent($event,row)">
+                        </el-checkbox>
+                    </div>
+                    <div class="cell" *ngIf="col&&col!=='operation'">{{row[col]}}</div>
+                    <div class="cell cell_oper" *ngIf="col&&col==='operation'">
+                        <button *ngFor="let op of operation"
+                        class="el-button el-button--text"
+                        (click)="op.event(row)">{{op.name}}</button>
+                    </div>
+                </div>
+            </div>
+       </div>
+       <div *ngIf="tableData.length<1" class="tbody_no_data">
+           暂无数据
+       </div>
+   </div>
+</div>

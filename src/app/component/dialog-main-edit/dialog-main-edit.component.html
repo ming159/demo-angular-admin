@@ -1,0 +1,44 @@
+<div class="el-dialog__wrapper"
+    style="z-index: 2000; opacity: 1; transform: translate3d(0px, 0px, 0px); visibility: inherit;
+    background-color:#0000007a;">
+    <div class="el-dialog animate__animated animate__slideInDown"
+    [style]="{'width': dialogInfo.width+'px', 'top':'15%'}">
+        <div class="el-dialog__header">
+            <span *ngIf="dialogInfo.title" class="el-dialog__title">{{dialogInfo.title}}</span>
+            <button aria-label="Close" class="el-dialog__headerbtn" type="button"
+            (click)="dialogInfo.closeEvent()">
+            <i class="el-dialog__close el-icon el-icon-close"></i>
+            </button>
+        </div>
+        <div class="el-dialog__body">
+            <div class="form_item">
+                <label for="name" style="width: 80px;">名称</label>
+                <el-input placeholder="请输入名称" [model]="dialogInfo.row.name"
+                style="width: calc(100% - 80px);">
+                </el-input>
+            </div>
+            <div class="form_item">
+                <label for="date" style="width: 80px;">时间</label>
+                <el-input placeholder="请输入时间" [model]="dialogInfo.row.date"
+                style="width: calc(100% - 80px);">
+                </el-input>
+            </div>
+            <div class="form_item">
+                <label for="desc" style="width: 80px;">描述</label>
+                <el-input placeholder="请输入描述" [model]="dialogInfo.row.desc"
+                style="width: calc(100% - 80px);">
+                </el-input>
+            </div>
+            <div class="form_item">
+                <label for="addr" style="width: 80px;">地址</label>
+                <el-input placeholder="请输入地址" [model]="dialogInfo.row.addr"
+                style="width: calc(100% - 80px);">
+                </el-input>
+            </div>
+        </div>
+        <div class="el-dialog__footer" *ngIf="dialogInfo.hasBtn">
+            <el-button (click) = "dialogInfo.cancelEvent()">取消</el-button>
+            <el-button type="primary" (click) = "dialogInfo.okEvent()">确定</el-button>
+        </div>
+    </div>
+  </div>
